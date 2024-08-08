@@ -6,7 +6,7 @@ const Content = () => {
     const [items, setItems] = useState([
         {
             id: 1,
-            checked: false,
+            checked: true,
             item: "Almond nuts (salted)"
         },
         {
