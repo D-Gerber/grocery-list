@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FaTrashAlt } from 'react-icons/fa'
 
 const Content = () => {
-    const [items, setItems] = useState([
+    const [items, setItem] = useState([
         {
             id: 1,
             checked: true,
@@ -21,6 +21,10 @@ const Content = () => {
         }
     ]);
 
+    const handleCheck = (id) => {
+        console.log(`key: ${id}`)
+    }
+
     return (
         <main>
             <ul>
@@ -28,7 +32,8 @@ const Content = () => {
                     <li className="item" key={item.id}>
                         <input
                             type="checkbox"
-                            checked={items.checked}
+                            onChange={() => handleCheck(item.id)}
+                            checked={item.checked}
                         />
                         <label>{item.item}</label>
                         <FaTrashAlt
